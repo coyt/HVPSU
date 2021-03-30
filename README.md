@@ -1,7 +1,6 @@
 # HVPSU
 Electron Application for High Voltage Power Supply Controller
 
-#### LOST60 PCB Version 1.0 (FALL 2019)
 <p align="center">
 <img width="800px" src="https://raw.githubusercontent.com/coyt/HVPSU/main/images/softwarescreencap1.PNG"/>
 </p>
@@ -20,7 +19,9 @@ The High Voltage Power Supply Control Board houses an ESP32 WIFI Enabled Microco
 #### How to install and use
 
 install dependencies:
+
     npm install express --save
+    
     npm install chart.js --save
 
 run:
