@@ -1,0 +1,19 @@
+{
+  "name": "HVPSU",
+  "version": "0.1.0",
+  "description": "High Voltage Power Supply Control Software",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Coyt Barringer",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.0"
+  },
+  "dependencies": {
+    "chart.js": "^2.9.4",
+    "express": "^4.17.1"
+  }
+}
