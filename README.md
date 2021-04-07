@@ -20,13 +20,13 @@ The High Voltage Power Supply Control Board houses an ESP32 WIFI Enabled Microco
 
 1. Download NPM and install it
 2. run: 
-'''
+```
 npm install
-'''
+```
 in the HVPSU directory (rebuilds node_modules)
 
 3. run:
-'''
+```
 npm start
-'''
+```
 in the HVPSU directory (starts application)
