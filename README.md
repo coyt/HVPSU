@@ -18,11 +18,6 @@ The High Voltage Power Supply Control Board houses an ESP32 WIFI Enabled Microco
 
 #### How to install and use
 
-install dependencies:
-
-    npm install express --save
-    
-    npm install chart.js --save
-
-run:
-    npm start
+1. Download NPM and install it
+2. run: <  npm install  > in the HVPSU directory (rebuilds node_modules)
+3. run: <  npm start    > in the HVPSU directory (starts application)
