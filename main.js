@@ -4,11 +4,6 @@ const { app, BrowserWindow, Menu, ipcMain} = require('electron')
 
 app.on('ready', () => {
 
-  //build menu from template
-  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-  //insert menu
-  Menu.setApplicationMenu(mainMenu);
-
   //create the "main" window in the 1st renderer thread
   mainWindow = new BrowserWindow({
     width: 800,
@@ -20,6 +15,9 @@ app.on('ready', () => {
     }
   })
 
+  //insert menu
+  Menu.setApplicationMenu(mainMenu);
+
   //load index.html inside browser window
   mainWindow.loadFile('index.html')
 
@@ -28,6 +26,10 @@ app.on('ready', () => {
     mainWindow = null;
     app.quit();
   });
+
+
+
+
 
 })
 
@@ -42,6 +44,10 @@ app.on('window-all-closed', () => {
 
 //prevents too many windows from being created?
 app.on('activate', () => {
+
+  //build menu from template
+  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow()
   }
