@@ -103,8 +103,13 @@ const mainMenuTemplate = [
 
 
 //if mac, add empty object to menu
-if(process.platform == 'darwin'){
-  mainMenuTemplate.unshift({});
+//if(process.platform == 'darwin'){
+//  mainMenuTemplate.unshift({});
+//}
+
+//if mac, add empty object to menu
+if (process.platform == 'darwin') {
+  mainMenuTemplate.unshift({label: ''});
 }
 
 
