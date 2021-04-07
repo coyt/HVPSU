@@ -15,9 +15,6 @@ app.on('ready', () => {
     }
   })
 
-  //insert menu
-  Menu.setApplicationMenu(mainMenu);
-
   //load index.html inside browser window
   mainWindow.loadFile('index.html')
 
@@ -27,9 +24,10 @@ app.on('ready', () => {
     app.quit();
   });
 
-
-
-
+  //build menu from template
+  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+  //insert menu
+  Menu.setApplicationMenu(mainMenu);
 
 })
 
@@ -44,9 +42,6 @@ app.on('window-all-closed', () => {
 
 //prevents too many windows from being created?
 app.on('activate', () => {
-
-  //build menu from template
-  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
 
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow()
@@ -84,23 +79,25 @@ ipcMain.on('request-mainprocess-action-stop-network-server', (event, arg) => {
 
 // Create menu  template
 const mainMenuTemplate = [
-  {
-    label:'File',
-    submenu:[
-      {
-        label: 'Add Item'
-      },
-      {
-        label: 'Clear Item'
-      },
-      {
-        label: 'Quit',
-        accelerator:process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
-        click(){
-          app.quit();
-        }
-      }
-    ]
+  {label:"File",
+          submenu:[
+            {
+              label: 'Add Item'
+            },
+            {
+              label: 'Clear Item'
+            },
+            {
+              label: 'Quit',
+              accelerator:process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
+              click(){
+                app.quit();
+              }
+            }
+          ]
+  },
+  {label: "Menu1",
+  submenu: [{role: 'TODO'}]
   }
 ];
 
