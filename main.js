@@ -102,12 +102,12 @@ const mainMenuTemplate = [
 ];
 
 
-//if mac, add empty object to menu
+//if mac, add empty object to menu - THIS METHOD DOES NOT WORK ON MAC!!!
 //if(process.platform == 'darwin'){
 //  mainMenuTemplate.unshift({});
 //}
 
-//if mac, add empty object to menu
+//if mac, add empty object to menu - THIS METHOD DOES WORK ON MAC!!!
 if (process.platform == 'darwin') {
   mainMenuTemplate.unshift({label: ''});
 }
