@@ -89,8 +89,7 @@ const mainMenuTemplate = [
       },
       {
         label: 'Quit',
-        accelerator: process.platform == 'darwin' ? 'Command+Q' : 
-        'Ctrl+Q',
+        accelerator:process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
         click(){
           app.quit();
         }
@@ -112,15 +111,14 @@ if(process.env.NODE_ENV !== 'production'){
     label: 'Developer Tools',
     submenu:[
       {
+        role: 'reload'
+      },
+      {
         label: 'Toggle DevTools',
-        accelerator: process.platform == 'darwin' ? 'Command+I' : 
-        'Ctrl+I',
+        accelerator:process.platform == 'darwin' ? 'Command+I' : 'Ctrl+I',
         click(item, focusedWindow){
           focusedWindow.toggleDevTools();
         }
-      },
-      {
-        role: 'reload'
       }
     ]
   });
