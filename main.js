@@ -4,6 +4,11 @@ const { app, BrowserWindow, Menu, ipcMain} = require('electron')
 
 app.on('ready', () => {
 
+  //build menu from template
+  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+  //insert menu
+  Menu.setApplicationMenu(mainMenu);
+
   //create the "main" window in the 1st renderer thread
   mainWindow = new BrowserWindow({
     width: 800,
@@ -23,11 +28,6 @@ app.on('ready', () => {
     mainWindow = null;
     app.quit();
   });
-
-  //build menu from template
-  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-  //insert menu
-  Menu.setApplicationMenu(mainMenu);
 
 })
 
