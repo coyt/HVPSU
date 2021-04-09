@@ -13,7 +13,9 @@
     "electron": "^12.0.0"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "chart.js": "^2.9.4",
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   }
 }
