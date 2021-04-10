@@ -49,6 +49,7 @@ app.post('/randomvalue', (req, res) => {
     const localRand = req.body;
     myConsole.log("*** WE JUST RECEIVED A RANDOM VALUE: ***");
     myConsole.log(localRand);
+    ipc.send('randomValue',localRand);
 });
 
 app.put('/randomvalue', (req, res) => {
@@ -70,3 +71,4 @@ ipc.on('message', (event, message) => {
     myConsole.log("*** STOPPING NS ***");
     //backgroundServer.close();
 })
+

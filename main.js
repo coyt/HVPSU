@@ -77,6 +77,14 @@ ipcMain.on('request-mainprocess-action-stop-network-server', (event, arg) => {
 });
 
 
+//Attach listener for RANDOM VALUE
+ipcMain.on('randomValue', (event, arg) => {
+  console.log(arg);
+  console.log("*** GOT ARG RANDOMVALUE IN MAIN ***");
+  mainWindow.webContents.send("randomValue1",arg);
+});
+
+
 // Create menu  template
 const mainMenuTemplate = [
   {label:"File",

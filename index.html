@@ -27,6 +27,8 @@
     <button onclick="startNetworkServer()">START NETWORK SERVER</button>
     <button onclick="stopNetworkServer()">STOP NETWORK SERVER</button>
 
+	<p id="randomValue"></p>
+
     <p id="demo">WHATTTT</p>
 
     <!---
@@ -51,8 +53,15 @@
 
     <script>
 
+		//document.getElementById(randomValue).value = newValue;
 
-        
+		const { ipcRenderer } = require('electron');
+		ipcRenderer.on("randomValue1", (event, message) => {
+			console.log(message);
+			console.log("*** GOT RANDOM VALUE IN HTML ***");
+			document.getElementById("randomValue").innerText = Object.keys(message);
+		})
+
         function startNetworkServer() {
             document.getElementById("demo").style.color = "red";
             console.log('asdf');
